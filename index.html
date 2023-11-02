@@ -147,10 +147,10 @@
 
         $(function () {
             $('form').submit(function () {
-                const coke    = $('input[name="coke"]').val();
-                const orange = $('input[name="orange"]').val();
-                const coffee  = $('input[name="coffee"]').val();
-                const sparkling  = $('input[name="sparkling"]').val();
+                const coke    = $('select[name="coke"]').val();
+                const orange = $('select[name="orange"]').val();
+                const coffee  = $('select[name="coffee"]').val();
+                const sparkling  = $('select[name="sparkling"]').val();
                 const msg = `${coke}\n${orange}\n${coffee}\n${sparkling}`;
                 sendText(msg);
                 return false;
