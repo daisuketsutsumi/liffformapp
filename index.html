@@ -147,12 +147,22 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('select[name="name"]').val();
-                const coke    = $('select[name="coke"]').val();
-                const orange = $('select[name="orange"]').val();
-                const coffee  = $('select[name="coffee"]').val();
-                const sparkling  = $('select[name="sparkling"]').val();
-                const msg = `${coke}\n${orange}\n${coffee}\n${sparkling}`;
+                // 特定のクラスを持つすべてのselect要素を選択
+                const selects = document.querySelectorAll('select.form-control.stock-select');
+                
+                // 各select要素のループを実行して必要なJavaScriptコードを生成
+                selects.forEach(select => {
+                  // select要素からname属性を取得
+                  const name = select.getAttribute('name');
+                
+                  // select要素の値のための定数を生成（evalを使用せずに）
+                  window[name] = $(`select[name="${name}"]`).val();
+                
+                  // メッセージ用の定数を生成
+                  window[`${name}msg`] = `${name}の在庫本数は: ${window[name]}`;
+                });
+                
+                // これで、各select要素に対して値を格納する変数とメッセージを格納する変数の二つが生成されます。
                 sendText(msg);
                 return false;
             });
