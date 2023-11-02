@@ -36,7 +36,7 @@
             <div class="content">
                 <div style="display: flex; align-items: center; white-space: nowrap;">
                     <p class="mt-0 mb-0">コーラ：</p>
-                    <select class="form-control w-50 mt-1" name="name" required style="height: 30px;" id="numberSelect">
+                    <select class="form-control stock-select w-50 mt-1" name="coke" required style="height: 30px;" id="numberSelect">
                         <option value="">在庫本数</option>
                     </select>
                 </div>
@@ -177,12 +177,17 @@
     </script>
     
     <script>
-    let selectElement = document.getElementById('numberSelect');
-    for (let i = 1; i <= 50; i++) {
-        let option = document.createElement('option');
-        option.value = "option" + i;
-        option.innerText = i;
-        selectElement.appendChild(option);
+    // クラス名 "stock-select" を持つすべての要素を選択
+        const selects = document.querySelectorAll('.stock-select');
+
+    // 各要素に対して操作を行う
+        selects.forEach((select) => {
+    // ここでselect要素に対する操作を行う
+        for(let i = 1; i <= 50; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i;
+        select.appendChild(option);
     }
 </script>
 
