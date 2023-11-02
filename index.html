@@ -147,12 +147,11 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
-                const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const coke    = $('input[name="coke"]').val();
+                const orange = $('input[name="orange"]').val();
+                const coffee  = $('input[name="coffee"]').val();
+                const sparkling  = $('input[name="sparkling"]').val();
+                const msg = `${coke}\n${orange}\n${coffee}\n${sparkling}`;
                 sendText(msg);
                 return false;
             });
