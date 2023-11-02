@@ -36,7 +36,9 @@
             <div class="content">
                 <div style="display: flex; align-items: center; white-space: nowrap;">
                     <p class="mt-0 mb-0">コーラ：</p>
-                    <input type="text" placeholder="本数を入力" class="form-control w-50 mt-1" name="coke" required style="height: 30px;">
+                    <select class="form-control w-50 mt-1" name="name" required style="height: 30px;" id="numberSelect">
+                        <option value="">選択してください</option>
+                    </select>
                 </div>
                 <div style="display: flex; align-items: center; white-space: nowrap;">
                     <p class="mt-0 mb-0">ウーロン茶：</p>
@@ -171,6 +173,16 @@
             });
         }
     </script>
+    
+    <script>
+    let selectElement = document.getElementById('numberSelect');
+    for (let i = 1; i <= 50; i++) {
+        let option = document.createElement('option');
+        option.value = "option" + i;
+        option.innerText = i;
+        selectElement.appendChild(option);
+    }
+</script>
 
 </body>
 </html>
