@@ -9,14 +9,14 @@
     <style>
         .content {
             display: none;
-            padding: 50px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
      <form class="w-75 mx-auto">
-        <div style="display: flex; align-items: center; white-speace: nowrap;">
-          <p class="mt-0 mb-0">確認担当者名②：</p>
+        <div style="display: flex; align-items: center; white-space: nowrap;">
+          <p class="mt-0 mb-0">確認担当者名：</p>
           <div>
             <select class="form-control w-50 mt-1" name="name" required style="height: 30px;">
                 <option value="">選択</option>
@@ -145,21 +145,16 @@
         const params = (new URL(document.location)).searchParams;
         const key = params.get('key');
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        
         $(function () {
-            $('form').submit(function (event) {
-                event.preventDefault(); // フォームの標準の送信を阻止する
-
-                // フォーム内のすべてのselect要素の値を取得して処理する
-                $('select').each(function () {
-                    var itemName = $(this).attr('name'); // selectのname属性を取得
-                    var itemValue = $(this).val(); // selectの選択された値を取得
-                    console.log(itemName + 'の選択された値:', itemValue); // コンソールに名前と値を表示
-                });
-
-                // 他の処理...
+            $('form').submit(function () {
+                const name    = $('select[name="name"]').val();
+                const coke    = $('select[name="coke"]').val();
+                const orange = $('select[name="orange"]').val();
+                const coffee  = $('select[name="coffee"]').val();
+                const sparkling  = $('select[name="sparkling"]').val();
+                const msg = `${coke}\n${orange}\n${coffee}\n${sparkling}`;
+                sendText(msg);
+                return false;
             });
         });
 
