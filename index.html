@@ -152,7 +152,7 @@
                 const orange = $('select[name="orange"]').val();
                 const coffee  = $('select[name="coffee"]').val();
                 const sparkling  = $('select[name="sparkling"]').val();
-                const msg = `${coke}\n${orange}\n${coffee}\n${sparkling}`;
+                const msg = `${name}${coke}\n${orange}\n${coffee}\n${sparkling}`;
                 sendText(msg);
                 return false;
             });
