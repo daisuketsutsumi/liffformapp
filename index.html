@@ -1,67 +1,92 @@
-.flex-row {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.mb-20px {
-    margin-bottom: 20px;
-}
-
-.form-control-small {
-    height: 30px;
-}
-
-.w-75-mt-1 {
-    width: 75%;
-    margin-top: 1rem;
-}
-
-.w-50-mt-1 {
-    width: 50%;
-    margin-top: 1rem;
-}
-
-/* 既存のスタイル */
-.content {
-    display: none;
-    padding: 10px;
-}
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>店舗在庫登録ツール</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content {
+            display: none;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
      <form class="w-75 mx-auto">
-        <div class="flex-row mb-20px">
+        <div style="display: flex; align-items: center; white-space: nowrap; margin-bottom: 20px;">
           <p class="mt-0 mb-0">確認担当者名：</p>
           <div>
-            <select class="form-control form-control-small w-75-mt-1" name="name" required>
-                <!-- オプションのリスト -->
+            <select class="form-control w-75 mt-1" name="name" required style="height: 30px;">
+                <option value="">選択</option>
+                <option value="堤まゆみ">堤まゆみ</option>
+                <option value="糸山久美子">糸山久美子</option>
+                <option value="松尾京子">松尾京子</option> 
+                <option value="西村柚香">西村柚香</option>
+                <option value="鶴丸恵美子">鶴丸恵美子</option>
+                <option value="田中さよこ">田中さよこ</option>
+                <option value="吉田美鈴">吉田美鈴</option>
+                <option value="堤理沙子">堤理沙子</option>
+                <option value="その他">その他</option>
             </select>
           </div>
-        </div>
+         </div>
         <button class="accordion" type="button">ドリンク</button>
-        <div class="content">
-            <!-- 各ドリンクのセレクトボックス、以下のパターンを繰り返す -->
-            <div class="flex-row">
-                <p class="mt-0 mb-0">コーラ：</p>
-                <select class="form-control stock-select form-control-small w-50-mt-1" name="coke">
-                    <option value="">在庫本数</option>
-                </select>
+         </div>
+            <div class="content">
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">コーラ：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="coke" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">オレンジ：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="orange" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">コーヒー：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="coffee" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">炭酸水：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="sparkling" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
             </div>
-            <!-- 他のドリンクについても同様 -->
-        </div>
-        <div style="display: flex; align-items: center; margin-top: 10px;">
-            <input type="submit" class="mt-4 btn btn-primary" value="送信">
-        </div>
+        <button class="accordion" type="button">食材</button>
+            <div class="content">
+                 <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">コーラ：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="coke" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">オレンジ：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="orange" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">コーヒー：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="coffee" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                    <p class="mt-0 mb-0">炭酸水：</p>
+                    <select class="form-control stock-select w-50 mt-1" name="sparkling" style="height: 30px;" id="numberSelect">
+                        <option value="">在庫本数</option>
+                    </select>
+                 </div>
+            </div> 
     </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -69,18 +94,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-
-    <?php
-    $employees = ['堤まゆみ', '糸山久美子', '松尾京子', /* その他の名前... */, 'その他'];?>
-
-    <select class="form-control form-control-small w-75-mt-1" name="name" required>
-        <option value="">選択</option>
-        <?php foreach ($employees as $employee) : ?>
-        <option value="<?= htmlspecialchars($employee) ?>"><?= htmlspecialchars($employee) ?></option>
-        <?php endforeach; ?>
-    </select>
-
+    
     <script>
+
         $(document).ready(function () {
             const liffId = "1656694498-zJe76kyG";
             initializeLiff(liffId);
